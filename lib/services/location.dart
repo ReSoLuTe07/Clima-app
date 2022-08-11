@@ -15,9 +15,5 @@ Future<void> getCurrentLocation() async{
     print(e);
   }
 }
-  void requestCurrentlocation() async{
 
-    LocationPermission permission = await Geolocator.requestPermission();
-    print(permission);
-  }
 }

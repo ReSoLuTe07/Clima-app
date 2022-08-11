@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:clima/utilities/constants.dart';
 import 'package:clima/services/weather.dart';
 import 'city_screen.dart';
+import 'package:geolocator/geolocator.dart';
 
 class LocationScreen extends StatefulWidget {
 
@@ -23,7 +24,14 @@ class _LocationScreenState extends State<LocationScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    requestCurrentlocation();
     updateUI(widget.locatonWeather);
+
+  }
+  void requestCurrentlocation() async{
+
+    LocationPermission permission = await Geolocator.requestPermission();
+
   }
   void updateUI( dynamic weatherData){
     setState((){
